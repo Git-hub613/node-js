@@ -8,7 +8,7 @@ const router = express()
 
 router.get("/",getProducts)
 router.get("/user",auth,getUserAll)
-router.get("/:id",auth,authBased(ROLES_MERCHANT),getProductById)
+router.get("/:id",getProductById)
 
 router.post("/",auth,authBased(ROLES_MERCHANT),createProduct )
 
