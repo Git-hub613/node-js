@@ -1,10 +1,13 @@
 
 import { v2 as cloudinary } from 'cloudinary';
  const cloudinaryConnect = async ()=>{
+    const name = 'dsjmqk7ew'
+    const key = '814694424917678'
+    const secret = 'ltyrljVPu3XeDSMiVSiMAoAhj2o'
     cloudinary.config({ 
-        cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
-        api_key: process.env.CLOUDINARY_API_KEY, 
-        api_secret: process.env.CLOUDINARY_API_SECRET // Click 'View API Keys' above to copy your API secret
+        cloud_name: name, 
+        api_key: key, 
+        api_secret: secret
     });
  }
 
