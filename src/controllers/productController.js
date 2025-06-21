@@ -46,7 +46,7 @@ const createProduct = async (request,response)=>{
     try {
         const productData = await productServices.createProduct(data,userId,image)
 
-        if(productData.createdAtBy != userId && !userId.roles.includes(ROLES_ADMIN)) return response.status(403).send("Access deined.")
+        // if(productData.createdAtBy != userId && !userId.roles.includes(ROLES_ADMIN)) return response.status(403).send("Access deined.")
 
     if(!productData) return response.status(404).send("products not found")
 
