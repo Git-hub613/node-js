@@ -47,7 +47,7 @@ const getProductById = async(id)=>{
 const createProduct = async(data,userId,files) =>{
 
     const image = await fileUpload(files)
-    if(!image) throw new Error("products image is not added.")
+    // if(!image) throw new Error("products image is not added.")
 
     return  await Product.create({name : data.name, category : data.category, brand : data.brand, price : data.price, imageUrl :image?.map((items)=> items?.url) 
         , createdAtBy : userId});
@@ -57,7 +57,7 @@ const createProduct = async(data,userId,files) =>{
 const updateProduct  = async (userId,data,files,id)=>{
     const image = await fileUpload(files)
 
-    const updateData = await Product.findByIdAndUpdate(id,{name : data.name,category : data.category, brand : data.brand, price : data.price , createBy : userId,images : image.map((items)=>items?.url)},{
+    const updateData = await Product.findByIdAndUpdate(id,{name : data.name,category : data.category, brand : data.brand, price : data.price , createBy : userId,images : image?.map((items)=>items?.url)},{
         new : true
     });
 
