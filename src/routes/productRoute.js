@@ -10,7 +10,7 @@ router.get("/",getProducts)
 router.get("/user",auth,getUserAll)
 router.get("/:id",getProductById)
 
-router.post("/",createProduct )
+router.post("/",auth,authBased(ROLES_MERCHANT),createProduct )
 
 router.put("/:id",auth,authBased(ROLES_MERCHANT),updateProduct)
 
