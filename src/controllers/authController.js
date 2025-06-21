@@ -22,13 +22,12 @@ const login = async (request,response)=>{
 }
 
 const register = async(request,response)=>{
-    const {name,email,password,confirmPassword,address,phone,roles} = request.body;
+    const {name,email,password,confirmPassword,address,phone} = request.body;
 
     if(!name) return response.status(422).send("name is required");
     if(!email) return response.status(422).send("email is required");
         if (!address?.city) return response.status(422).send("address is required/.");
       if(!phone) return response.status(422).send("phone is required ");
-      if (!roles) return response.status(422).send("roles is required");
       if(password !== confirmPassword) return response.status(422).send("password do not match.")
 
     try {
