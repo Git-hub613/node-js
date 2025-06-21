@@ -44,12 +44,12 @@ const getProductById = async(id)=>{
 
 }
 
-const createProduct = async(data,userId,files) =>{
+const createProduct = async(data,userId,image) =>{
 
-    const image = await fileUpload(files)
+    const imageData = await fileUpload(image)
     // if(!image) throw new Error("products image is not added.")
 
-    return  await Product.create({name : data.name, category : data.category, brand : data.brand, price : data.price, imageUrl :image?.map((items)=> items?.url) 
+    return  await Product.create({name : data.name, category : data.category, brand : data.brand, price : data.price, imageUrl :imageData?.map((items)=> items?.url) 
         , createdAtBy : userId});
 
 }

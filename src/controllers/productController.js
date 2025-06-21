@@ -42,10 +42,9 @@ const getProductById = async(request,response)=>{
 const createProduct = async (request,response)=>{
     const data = request.body;
     const userId = request.user.id;
-    const file = request.files;
-    console.log(file)
+    const image = request.files;
     try {
-        const productData = await productServices.createProduct(data,userId,file)
+        const productData = await productServices.createProduct(data,userId,image)
 
         if(productData.createdAtBy != userId && !userId.roles.includes(ROLES_ADMIN)) return response.status(403).send("Access deined.")
 
