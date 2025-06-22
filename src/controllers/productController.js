@@ -52,7 +52,7 @@ const createProduct = async (request,response)=>{
 
     response.json(productData)
     } catch (error) {
-        response.status(500).send(error.message);
+        response.status(400).send(error.message);
     }
 }
 
