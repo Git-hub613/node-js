@@ -75,12 +75,12 @@ const country = async ()=>{
 }
 
 const profileImageUpload = async (userId,file) =>{
-    const uploadData = await fileUpload(file)
+    const uploadData = await fileUpload([file])
 
     if(!uploadData) throw new Error("your account profile image not upload")
 
        const data = await User.findByIdAndUpdate(userId,{
-          profileImage : uploadData?.url,
+          profileImage : uploadData[0]?.url,
         },{new : true})
 
         console.log(data)

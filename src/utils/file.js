@@ -10,7 +10,8 @@ const fileUpload = async (files) =>{
 
             resolve(data)
     }).end(file.buffer);
-   }); forFile.push(result)
+   })
+    forFile.push(result)
    } 
    return forFile;
 }

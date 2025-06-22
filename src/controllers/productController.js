@@ -41,12 +41,11 @@ const getProductById = async(request,response)=>{
 
 const createProduct = async (request,response)=>{
     const data = request.body;
-    const userId = request.user;
+    const userId = request.user.id;
     const image = request.files;
     try {
-        const productData = await productServices.createProduct(data,userId.id,image)
+        const productData = await productServices.createProduct(data,userId,image)
 
-        if(productData.createdAtBy != userId.id && !userId.roles.includes(ROLES_ADMIN)) return response.status(403).send("Access deined.")
 
     if(!productData) return response.status(404).send("products not found")
 
