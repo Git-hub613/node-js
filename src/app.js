@@ -7,13 +7,14 @@ import userRouter from './routes/userRoute.js';
 import logger from './middlewares/logger.js';
 import authRouter from './routes/authRouter.js';
 import multer from 'multer';
-import cloudinaryConnect from './config/cloudniry.js';
 import orderRouter from './routes/orderRouter.js';
 import paymentRouter from './routes/kaltiRouter.js';
 import questionRoute from './routes/questionRouter.js';
 import cors from 'cors'
+import cloudinaryConnect from './config/cloudinary.js';
 
 const app = express()
+dotenv.config()
 
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json())
@@ -27,7 +28,7 @@ app.use(cors())
 
 app.use(logger)
 
-dotenv.config()
+
 
 connectDB();
 
