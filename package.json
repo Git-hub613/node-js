@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon src/app.js"
+    "start": "node src/serverApp.js",
+    "dev": "nodemon src/serverApp.js"
   },
   "author": "Roshan Sardar",
   "license": "MIT",

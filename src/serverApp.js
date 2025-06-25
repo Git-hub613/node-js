@@ -16,6 +16,7 @@ import cloudinaryConnect from './config/cloudinary.js';
 const app = express()
 dotenv.config()
 
+
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json())
 
@@ -24,13 +25,14 @@ cloudinaryConnect()
 const upload = multer({
     storage : multer.memoryStorage()
 })
-app.use(cors())
 
 app.use(logger)
 
 
 
 connectDB();
+app.use(cors())
+
 
 
 const PORT = process.env.PORT || 5000
