@@ -43,6 +43,7 @@ const createProduct = async (request,response)=>{
     const data = request.body;
     const userId = request.user.id;
     const image = request.files;
+    console.log(data)
     try {
         const productData = await productServices.createProduct(data,userId,image)
 
