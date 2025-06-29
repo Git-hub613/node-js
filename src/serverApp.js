@@ -13,14 +13,15 @@ import questionRoute from './routes/questionRouter.js';
 import cors from 'cors'
 import cloudinaryConnect from './config/cloudinary.js';
 
-const app = express()
-dotenv.config()
+
 
 
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json())
 
 cloudinaryConnect()
+const app = express()
+dotenv.config()
 
 const upload = multer({
     storage : multer.memoryStorage()
